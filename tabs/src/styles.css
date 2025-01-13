@@ -1,0 +1,27 @@
+body {
+    font-family: sans-serif;
+    margin-right: 40%;
+  }
+  
+  .tab-header {
+    margin: 0;
+    padding: 5px 15px;
+    border-radius: 0px 0px 5px 5px;
+    border: 1px solid grey;
+    cursor: pointer;
+  }
+  
+  .tab-header.active {
+    background-color: antiquewhite;
+  }
+  
+  .tab-content {
+    padding: 5px;
+    display: none;
+    border: 1px solid grey;
+  }
+  
+  .tab-content.active {
+    display: block;
+  }
+  
