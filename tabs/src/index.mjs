@@ -28,16 +28,17 @@ tabs.forEach(({ id, label, content }, index) => {
 
 tabHeaderContainer.addEventListener("click", (event) => {
   if (event.target.classList.contains("tab-header")) {
+    const activeTabId = event.target.id;
     Array.from(tabHeaderContainer.childNodes).map((tab) => {
-      tab.classList =
-        tab.id == event.target.id ? "tab-header active" : "tab-header";
+        tab.classList.toggle("active", tab.id === activeTabId)
     });
-    Array.from(tabContentContainer.childNodes).map((tab) => {
-      tab.classList =
-        tab.id == event.target.id ? "tab-content active" : "tab-content";
+    Array.from(tabContentContainer.childNodes).map((content) => {
+        content.classList.toggle("active", content.id === activeTabId)
     });
   }
 });
+
 container.appendChild(tabHeaderContainer);
 container.appendChild(tabContentContainer);
+
 document.body.appendChild(container);
