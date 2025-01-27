@@ -1,3 +1,8 @@
+// Polyfill for map()
+// -----------------------------
+// Syntax Example
+// arr.map((elem) => elem/2);
+
 Array.prototype.myMap = function (callback, thisArgs) {
   if (!Array.isArray(this)) {
     throw new TypeError("Not an array");

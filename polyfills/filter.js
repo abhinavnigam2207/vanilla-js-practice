@@ -1,4 +1,9 @@
-Array.prototype.myFilter = function (callback, thisArgs) {
+// Polyfill for filter()
+// -----------------------------
+// Syntax Example
+// arr.filter((elem)=> elem%2 == 0);
+
+Array.prototype.myFilter = function (callback) {
     if (!Array.isArray(this)) {
       throw new TypeError("Not an array");
     }
