@@ -1,15 +1,16 @@
-// Polyfill for call()
+// Polyfill for apply()
 // -----------------------------
 // Syntax Example
-// call(thisArg, arg1, arg2, .... , argN);
+// apply(thisArg, [arg1, arg2, .... , argN]);
 
-Function.prototype.myCall = function (context = {}, ...args) {
+Function.prototype.myApply = function (context = {}, arrgsArray) {
     if (typeof this !== 'function') {
         throw new TypeError('Not a function');
     }
     context.fn = this;
-    context.fn(...args);
+    context.fn(...arrgsArray);
 };
+
 
 const employee = {
     name: 'Abhinav',
@@ -20,4 +21,4 @@ const printDetails = function (city, state) {
     console.log(`${this.name} is ${this.age} years old and lives in ${city}, ${state}`);
 }
 
-printDetails.myCall(employee, 'Bangalore', 'Karnataka');
+printDetails.myApply(employee, ['Bangalore', 'Karnataka']);
